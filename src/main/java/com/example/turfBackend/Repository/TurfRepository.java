@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface TurfRepository extends JpaRepository<Turf,Long> {
 
-    @Query(value = "SELECT * FROM turf where owner_id := id",nativeQuery = true)
+    @Query(value = "SELECT * FROM turf where owner_id = :id",nativeQuery = true)
     List<Turf> getByOwnerId(Long id);
 
 }

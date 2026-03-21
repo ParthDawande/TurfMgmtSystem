@@ -69,6 +69,11 @@ public class OwnerService {
             if (slotStr.charAt(i) < 'A' || slotStr.charAt(i) > 'R') {
                 throw new RuntimeException("Invalid slot type: " + slotStr.charAt(i) + ". Allowed slots are a to r only");
             }
+
+            boolean exists = slotRepository.existsByTurfIdAndSlotDateAndSlotType(turf.getId(), date, slotStr.charAt(i));
+            if (exists) {
+                throw new RuntimeException("Slot " + slotStr.charAt(i) + " already exists on " + date);
+            }
             Slot slot = new Slot();
             slot.setSlotType(slotStr.charAt(i));
             slot.setSlotDate(date);

@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BookingRepository extends JpaRepository<Booking,Long> {
 
-    @Query(value = "SELECT * FROM booking where user_id:=id",nativeQuery = true)
+    @Query(value = "SELECT * FROM booking where user_id = :id",nativeQuery = true)
     List<Booking> findAllByUserId(Long id);
 }

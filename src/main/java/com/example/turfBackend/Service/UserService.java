@@ -119,7 +119,7 @@ public class UserService {
             );
         }
 
-        slot.setStatus("AVAILABLE");
+        slot.setStatus("OPEN");
 
         Payment payment = booking.getPayment();
         payment.setTotalAmount(payment.getTotalAmount()- payment.getPricePerSlot());
