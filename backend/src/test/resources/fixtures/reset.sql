@@ -1,0 +1,11 @@
+-- Reset all tables in FK-safe order
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE complaint;
+TRUNCATE TABLE booking;
+TRUNCATE TABLE payment;
+TRUNCATE TABLE slot;
+TRUNCATE TABLE turf;
+TRUNCATE TABLE user;
+
+SET FOREIGN_KEY_CHECKS = 1;
