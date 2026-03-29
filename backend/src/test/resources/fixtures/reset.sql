@@ -1,5 +1,5 @@
--- Reset all tables in FK-safe order
-SET FOREIGN_KEY_CHECKS = 0;
+-- Reset all tables in FK-safe order (H2-compatible)
+SET REFERENTIAL_INTEGRITY FALSE;
 
 TRUNCATE TABLE complaint;
 TRUNCATE TABLE booking;
@@ -8,4 +8,4 @@ TRUNCATE TABLE slot;
 TRUNCATE TABLE turf;
 TRUNCATE TABLE user;
 
-SET FOREIGN_KEY_CHECKS = 1;
+SET REFERENTIAL_INTEGRITY TRUE;
